@@ -1,0 +1,230 @@
+openapi: 3.0.0
+info:
+  title: KeenMedd API
+  description: This is a KeenMedd API
+  contact:
+    email: keenmedd@gmail.com
+  version: 1.0.0
+servers:
+- url: http://localhost:1188
+# - url: https://virtserver.swaggerhub.com/keenmedd/API/1.0.0
+  description: SwaggerHub API Auto Mocking
+paths:
+  /doctor:
+    get:
+      summary: searches doctors
+      description: "By passing in the appropriate options, you can search for\navailable\
+        \ doctor in the system\n"
+      operationId: doctorGET
+      parameters:
+      - name: name
+        in: query
+        description: pass an optional search string for looking up doctor
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: specialty
+        in: query
+        description: pass a filter for looking up doctor
+        required: false
+        style: form
+        explode: true
+        schema:
+          minimum: 0
+          type: integer
+          format: int32
+      - name: expirience
+        in: query
+        description: pass a filter for looking up doctor
+        required: false
+        style: form
+        explode: true
+        schema:
+          minimum: 0
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: search results matching criteria
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Doctor'
+                x-content-type: application/json
+        "400":
+          description: bad input parameter
+      x-swagger-router-controller: Default
+  /doctor/details:
+    get:
+      summary: get doctor details
+      description: "By passing in the appropriate options, you can get doctor details\n"
+      operationId: doctorDetailsGET
+      parameters:
+      - name: id
+        in: query
+        description: pass an id to get doctor details
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: search results matching criteria
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DoctorDetails'
+                x-content-type: application/json
+        "400":
+          description: bad input parameter
+      x-swagger-router-controller: Default
+components:
+  schemas:
+    Doctor:
+      required:
+      - id
+      - name
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          example: d290f1ee-6c54-4b01-90e6-d701748f0851
+        name:
+          type: string
+          description: Doctor full name
+          example: Куку Валентина Андреевна
+        specialty:
+          type: string
+          description: Doctor domain area
+          example: Терапия
+        rating:
+          type: number
+          format: float
+          example: 7.7
+        popularity:
+          type: number
+          description: Number of doctor comments
+          format: float
+          example: 3222
+      example:
+        specialty: Терапия
+        popularity: 3222
+        name: Куку Валентина Андреевна
+        rating: 7.7
+        id: d290f1ee-6c54-4b01-90e6-d701748f0851
+    Comment:
+      required:
+      - id
+      - text
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          example: d290f1ee-6c54-4b01-90e6-d701748f0851
+        text:
+          type: string
+          example: Восхитительная работа!
+        createdAt:
+          type: string
+          format: date-time
+          example: 2021-05-30T18:28:19.684Z
+        rating:
+          type: number
+          format: float
+          example: 7.7
+      example:
+        createdAt: 2021-05-30T18:28:19.684Z
+        rating: 7.7
+        id: d290f1ee-6c54-4b01-90e6-d701748f0851
+        text: Восхитительная работа!
+    Education:
+      type: object
+      properties:
+        name:
+          type: string
+          example: Курсы кардилогии
+        finishedAt:
+          type: string
+          format: date-time
+          example: 2021-05-30T18:28:19.684Z
+        authority:
+          type: string
+          example: БелМАПО
+      example:
+        authority: БелМАПО
+        name: Курсы кардилогии
+        finishedAt: 2021-05-30T18:28:19.684Z
+    DoctorDetails:
+      required:
+      - id
+      - name
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          example: d290f1ee-6c54-4b01-90e6-d701748f0851
+        name:
+          type: string
+          description: Doctor full name
+          example: Куку Валентина Андреевна
+        specialty:
+          type: string
+          description: Doctor domain area
+          example: Терапия
+        experience:
+          type: integer
+          example: 5
+        rating:
+          type: number
+          format: float
+          example: 7.7
+        popularity:
+          type: number
+          description: Number of doctor comments
+          format: float
+          example: 3222
+        comments:
+          type: array
+          items:
+            $ref: '#/components/schemas/Comment'
+        workplace:
+          type: string
+          example: Минская ЦРБ
+        education:
+          type: array
+          items:
+            $ref: '#/components/schemas/Education'
+      example:
+        specialty: Терапия
+        comments:
+        - createdAt: 2021-05-30T18:28:19.684Z
+          rating: 7.7
+          id: d290f1ee-6c54-4b01-90e6-d701748f0851
+          text: Восхитительная работа!
+        - createdAt: 2021-05-30T18:28:19.684Z
+          rating: 7.7
+          id: d290f1ee-6c54-4b01-90e6-d701748f0851
+          text: Восхитительная работа!
+        education:
+        - authority: БелМАПО
+          name: Курсы кардилогии
+          finishedAt: 2021-05-30T18:28:19.684Z
+        - authority: БелМАПО
+          name: Курсы кардилогии
+          finishedAt: 2021-05-30T18:28:19.684Z
+        popularity: 3222
+        name: Куку Валентина Андреевна
+        rating: 7.7
+        id: d290f1ee-6c54-4b01-90e6-d701748f0851
+        experience: 5
+        workplace: Минская ЦРБ

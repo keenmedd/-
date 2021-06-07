@@ -1,0 +1,37 @@
+.home__input__container {
+  background: rgba(196, 196, 196, 0.07);
+  border: 5px solid #5b61ff;
+  box-sizing: border-box;
+  border-radius: 50px;
+  width: 348px;
+  height: 214px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+}
+.home__input__icon {
+  width: 120px;
+  height: 120px;
+  background-image: url("../../static/images/search\ icon.svg");
+  background-repeat: no-repeat;
+}
+.home__input {
+  flex: 1;
+  height: 100%;
+  border-radius: 50px;
+  border: none;
+  background-color: $purple;
+  font-size: 19px;
+  text-align: center;
+  color: $grey;
+
+  &::placeholder {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 69px;
+    line-height: 140%;
+    text-align: center;
+    color: $grey;
+  }
+}

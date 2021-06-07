@@ -1,0 +1,28 @@
+.header__logo {
+  font-family: Ravi Prakash;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 69px;
+  line-height: 140%;
+  /* or 97px */
+
+  text-align: center;
+
+  color: #00256d;
+}
+.header__link {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 46px;
+  line-height: 120%;
+  /* or 55px */
+
+  text-align: center;
+
+  color: #003cff;
+}
+.header__container {
+  display: flex;
+  justify-content: space-around;
+}

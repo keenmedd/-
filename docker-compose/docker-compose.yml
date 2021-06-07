@@ -1,0 +1,22 @@
+# ./docker-compose/docker-compose.yml
+version: '3'
+services:
+  frontend:
+    build: ../keen-app
+    image: "reactapp:1.0.0"
+    networks:
+      - sub-etha
+  backend:
+    build: ../express-app
+    image: "expressapp:1.0.0"
+    networks:
+      - sub-etha
+  revproxy:
+    build: ../docker-reverseProxy
+    image: "reverseproxy:1.0.0"
+    networks:
+      - sub-etha
+    ports:
+      - "80:80"
+networks:
+  sub-etha:
