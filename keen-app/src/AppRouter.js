@@ -8,6 +8,7 @@ import {
 import { routes } from "./consts";
 import DoctorsPage from "./containers/DoctorsPage";
 import HomePage from "./containers/HomePage";
+import PatientsPage from "./containers/PatientsPage";
 
 export default function AppRouter() {
   return (
@@ -15,6 +16,10 @@ export default function AppRouter() {
       <Switch>
         <Route path={routes.doctors}>
           <DoctorsPage />
+        </Route>
+
+        <Route path={routes.patients}>
+          <PatientsPage />
         </Route>
 
         <Route exact path={routes.home}>

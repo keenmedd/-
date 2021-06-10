@@ -1,52 +1,69 @@
 //colors and consts
 $purple: #cdd8ff;
 $grey: rgba(0, 0, 0, 0.25);
-
+$blue: #18A0FB;
 //fonts
 @font-face {
-  font-family: Roboto;
-  src: url("./static/fonts/Roboto/Roboto-Black.ttf");
+    font-family: Roboto;
+    src: url("./static/fonts/Roboto/Roboto-Black.ttf");
 }
+
 @font-face {
-  font-family: Ravi Prakash;
-  src: url("./static/fonts/Ravi_Prakash/RaviPrakash-Regular.ttf");
+    font-family: Ravi Prakash;
+    src: url("./static/fonts/Ravi_Prakash/RaviPrakash-Regular.ttf");
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url("./static/fonts/Montserrat/Montserrat-Regular.ttf");
+}
+
+@font-face {
+    font-family: Montserrat-Medium;
+    src: url("./static/fonts/Montserrat/Montserrat-Medium.ttf");
+}
+
+@font-face {
+    font-family: Montserrat-Bold;
+    src: url("./static/fonts/Montserrat/Montserrat-Bold.ttf");
 }
 
 //common styles
 body {
-  margin: 0;
-  background-color: $purple;
-  background-image: url("./static/images/bg.svg");
-  width: 100%;
-  height: 100vh;
+    margin: 0;
+    background-color: $purple;
+    background-image: url("./static/images/bg.svg");
+    width: 100%;
+    height: 100vh;
 }
+
 a {
-  text-decoration: none;
-  display: block;
-  cursor: pointer;
-
-  &:hover {
     text-decoration: none;
-  }
-
-  &:active,
-  &:visited {
-    text-decoration: none;
-  }
+    display: block;
+    cursor: pointer;
+    &:hover {
+        text-decoration: none;
+    }
+    &:active,
+    &:visited {
+        text-decoration: none;
+    }
 }
+
 input,
 textarea {
-  font-family: Roboto;
-  box-sizing: border-box;
-  -webkit-appearance: none;
-  -webkit-border-radius: 0px;
-  border-radius: 0px;
-  &:focus {
-    outline: none;
-  }
+    font-family: Roboto;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+    &:focus {
+        outline: none;
+    }
 }
+
 input[type="search"]::-webkit-search-cancel-button {
-  display: none;
+    display: none;
 }
 
 //imports of partial scss styles
