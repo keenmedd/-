@@ -14,7 +14,7 @@ $blue: #18A0FB;
 }
 
 @font-face {
-    font-family: Montserrat;
+    font-family: Montserrat-Regular;
     src: url("./static/fonts/Montserrat/Montserrat-Regular.ttf");
 }
 
@@ -69,4 +69,5 @@ input[type="search"]::-webkit-search-cancel-button {
 //imports of partial scss styles
 @import "./containers/HomePage/styles.scss";
 @import "./components/Header/styles.scss";
-@import "./containers/PatientsPage/styles.scss";
+@import "./containers/DoctorPage/styles.scss";
+@import "./components/DoctorCard/styles.scss"
