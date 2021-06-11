@@ -5,10 +5,12 @@ import { requestStatus, rootApiUrl } from "../consts";
 export const fetchPatients = createAsyncThunk(
     "categories/fetchPatients",
     async({ searchQuery }) => {
+        debugger;
         const response = await axios({
             method: "GET",
-            url: `${rootApiUrl}/patient?name=${searchQuery}`,
+            url: `${rootApiUrl}/doctor?name=${searchQuery}`,
         });
+        debugger;
         return response.data;
     }
 );
