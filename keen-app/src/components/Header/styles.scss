@@ -1,28 +1,42 @@
+
 .header__logo {
-  font-family: Ravi Prakash;
+  font-family: Comfortaa;
   font-style: normal;
   font-weight: normal;
-  font-size: 69px;
-  line-height: 140%;
-  /* or 97px */
-
+  font-size: 28.4444px;
+  line-height: 32px;
+  /* identical to box height */
+  
+  
   text-align: center;
-
-  color: #00256d;
-}
-.header__link {
-  font-family: Roboto;
+  
+  
+  color: #000000;
+  }
+  .header__link {
+    width: 91px;
+  height: 35px;
+  left: 622px;
+  top: 21px;
+  
+  font-family: Montserrat;
   font-style: normal;
-  font-weight: normal;
-  font-size: 46px;
-  line-height: 120%;
-  /* or 55px */
-
-  text-align: center;
-
-  color: #003cff;
-}
-.header__container {
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 18px;
   display: flex;
-  justify-content: space-around;
-}
+  align-items: center;
+  text-align: center;
+  letter-spacing: -0.015em;
+  
+  /* Actionable Item */
+  
+  color: #18A0FB;
+  }
+  .header__container {
+    display: flex;
+    justify-content: space-around;
+  
+    background-color: #ffffff;
+  }
+  
