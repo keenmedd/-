@@ -88,9 +88,6 @@ paths:
 components:
   schemas:
     Doctor:
-      required:
-      - id
-      - name
       type: object
       properties:
         id:
@@ -105,20 +102,116 @@ components:
           type: string
           description: Doctor domain area
           example: Терапия
+        category:
+          type: string
+          description: Doctor work category
+          example: Высшая
+        experience:
+          type: number
+          description: Years of experience
+          format: float
+          example: 5
+        workplace:
+          type: string
+          description: Doctor workplace
+          example: Поликлиника №35
+        city:
+          type: string
+          description: Doctor city
+          example: Минск
         rating:
           type: number
           format: float
-          example: 7.7
-        popularity:
+          example: 5
+        feedbackAmount:
           type: number
-          description: Number of doctor comments
+          description: Number of feedbacks
           format: float
-          example: 3222
+          example: 9
+        secondaryVisitPer:
+          type: number
+          description: Percent of the secondary visit
+          format: float
+          example: 9
+        education:
+          type: array
+          items:
+            $ref: '#/components/schemas/Education'
+        workExperience:
+          type: array
+          items:
+            $ref: '#/components/schemas/WorkExperience'
       example:
-        specialty: Терапия
-        popularity: 3222
         name: Куку Валентина Андреевна
-        rating: 7.7
+        specialty: Терапия
+        category: Высшая
+        experience: 5
+        workplace: Поликлиника №35
+        city: Минск
+        rating: 5
+        feedbackAmount: 9
+        secondaryVisitPer: 4
+        education:
+          - year: 2015
+            authority: БГМУ
+            note: Стоматолог-ортодонт
+          - year: 2020
+            authority: Стоматологические курсы "Vinir"
+            note: Хирургия. Импланты. Виниры
+        workExperience:
+          - start: 2016-09-01
+            end: 2020-05-30
+            position: Стоматолог
+            workplace: Стоматологическая поликлиника №5
+          - start: 2020-06-05
+            end: 2021-06-10
+            position: Стоматолог
+            workplace: Стоматологическая поликлиника №12
+            competencies:
+              - Стоматолог
+              - Стоматолог-хирург
+              - Стоматолог-ортодонт
+            extraInfo:
+              - Лучший врач 2020
+        id: d290f1ee-6c54-4b01-90e6-d701748f0851
+    WorkExperience:
+      type: object
+      properties:
+            id:
+                type: string
+                format: uuid
+                example: d290f1ee-6c54-4b01-90e6-d701748f0851
+            start:
+              type: date
+              format: date
+              example: 2020-09-01
+            end:
+              type: date
+              format: date
+              example: 2024-05-30
+            position:
+              type: string
+              description: Work position
+              example: Стоматолог
+            workplace:
+              type: string
+              description: Workplace
+              example: Стоматологическая поликлиника №5
+            competencies:
+              type: string
+              description: Competencies
+              example: Врач
+            extraInfo:
+              type: string
+              description: Extra
+              example: Лучший работник года!
+      example:
+        start: 2020-09-01
+        end: 2024-05-30
+        position: Стоматолог
+        workplace: Стоматологическая поликлиника №5
+        competencies: Врач
+        extraInfo: Лучший работник года!
         id: d290f1ee-6c54-4b01-90e6-d701748f0851
     Comment:
       required:
