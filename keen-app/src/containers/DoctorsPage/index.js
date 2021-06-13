@@ -1,23 +1,39 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router";
 import Header from "../../components/Header";
-import { fetchDoctors } from "../../reducers/doctorSlice";
+import { rootApiUrl } from "../../consts";
 
 export default function DoctorsPage() {
-  const dispatch = useDispatch();
-  const history = useHistory();
-  const searchQuery = useSelector((state) => state.doctor.searchQuery);
+  const filters = useState({ searchQuery: "" });
+  const [doctorsList, setDoctorsList] = useState([]);
 
-  useEffect(() => {
-    if (searchQuery) {
-      dispatch(fetchDoctors({ searchQuery }));
+  useEffect(async() => {
+    if (!doctorsList) {
+      //вот так посылать АПИ запрос
+      const response = await axios({
+        method: "GET",
+        url: `${rootApiUrl}/doctor?name=${filters.searchQuery}`,
+      });
+      setDoctorsList(response.data);
     }
   }, []);
 
   return (
-    <div className="home__container">
+    <div className="patients__container">
       <Header />
+
+      <div className="doctor_list">
+        {/* {doctorsList
+          ? doctorsList.map((doctor) => <DoctorCard name={doctor.name} />)
+          : "Nope"} */}
+      </div>
+
+      <div className="patients_paginaton">
+        {" "}
+        Всего результатов <b>20</b>, отображены с <b>1</b> по <b>5</b>.
+        Страницы: <b>1</b> 2 3{" "}
+      </div>
     </div>
   );
 }

@@ -31,8 +31,6 @@ $blue: #18A0FB;
 //common styles
 body {
     margin: 0;
-    background-color: $purple;
-    background-image: url("./static/images/bg.svg");
     width: 100%;
     height: 100vh;
 }
@@ -69,4 +67,4 @@ input[type="search"]::-webkit-search-cancel-button {
 //imports of partial scss styles
 @import "./containers/HomePage/styles.scss";
 @import "./components/Header/styles.scss";
-@import "./containers/PatientsPage/styles.scss";
+@import "./containers/DoctorsPage/styles.scss";
