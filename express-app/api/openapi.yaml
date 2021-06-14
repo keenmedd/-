@@ -35,14 +35,70 @@ paths:
           minimum: 0
           type: integer
           format: int32
+      - name: category 
+        in: query
+        description: doctor category
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
       - name: expirience
         in: query
-        description: pass a filter for looking up doctor
+        description: doctor's years of work
+        required: false
+        style: form
+        explode: true
+        schema:
+          minimum: 1
+          type: integer
+          format: int32
+      - name: workplace
+        in: query
+        description: doctor workplace
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: city
+        in: query
+        description: city where doctor works
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: rating
+        in: query
+        description: doctor's rating
+        required: false
+        style: form
+        explode: true
+        schema:
+          minimum: 1
+          maximum: 5
+          type: integer
+          format: int32
+      - name: feedbackAmount
+        in: query
+        description: feedbacks
         required: false
         style: form
         explode: true
         schema:
           minimum: 0
+          type: integer
+          format: int32
+      - name: secondaryVisitPercent
+        in: query
+        description: percent of the secondary visit to the doctor
+        required: false
+        style: form
+        explode: true
+        schema:
+          minimum: 1
+          maximum: 100
           type: integer
           format: int32
       responses:
@@ -182,11 +238,11 @@ components:
                 format: uuid
                 example: d290f1ee-6c54-4b01-90e6-d701748f0851
             start:
-              type: date
+              type: string
               format: date
               example: 2020-09-01
             end:
-              type: date
+              type: string
               format: date
               example: 2024-05-30
             position:
