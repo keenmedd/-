@@ -1,0 +1,146 @@
+.frame_one {
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 6px;
+
+}
+
+.details_text  {
+  
+  left: 19.23%;
+  right: 19.23%;
+  top: 28.07%;
+  bottom: 26.32%;
+  align-content: center;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 29px;
+  display: flex;
+  letter-spacing: -0.015em;
+  
+  color: #000000;
+}
+
+.details_text_1{
+  left: 16.92%;
+right: 16.92%;
+top: 27.5%;
+bottom: 27.5%;
+
+font-family: Montserrat;
+font-style: normal;
+font-weight: bold;
+font-size: 24px;
+line-height: 29px;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: -0.015em;
+transform: translate(40%, 0);
+color: #FFFFFF;
+}
+.text_title
+{
+  width: 1005px;
+  height: 53px;
+  left: 43px;
+  top: 116px;
+  
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 36px;
+  /* or 75% */
+  
+  letter-spacing: -0.015em;
+  
+  color: #000000;
+}
+
+.text
+{
+  width: 767.5px;
+  height: 42px;
+  left: 44px;
+  top: 258px;
+  
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 36px;
+  /* or 100% */
+  
+  letter-spacing: -0.015em;
+  display: table;
+  color: #000000;
+}
+.rectengle{
+ 
+bottom: 0%;
+align-self: start;
+width: 1179px;
+height: 79px;
+left: 65px;
+top: 643px;
+/* Actionable Item */
+display: table-cell;
+background: #18A0FB;
+border-radius: 6px;
+left: 50%;
+transform: translate(15%, 0);
+}
+
+.rectengle_1{
+  width: 800px;
+  height: 79px;
+  left: 65px;
+  top: 643px;
+align-self: start;
+/* Actionable Item */
+display: table-cell;
+background: #18A0FB;
+border-radius: 6px;
+left: 50%;
+transform: translate(5%, 0);
+}
+
+.text_subtitle{
+  width: 1228px;
+height: 94px;
+left: 46px;
+top: 1406px;
+
+font-family: Montserrat;
+font-style: normal;
+font-weight: normal;
+font-size: 36px;
+line-height: 36px;
+/* or 100% */
+
+letter-spacing: -0.015em;
+
+color: #000000;
+}
+
+.textcols {
+    white-space: nowrap;
+    font-size: 0;
+}
+.textcols-item {
+    white-space: normal;	
+    display: inline-block;
+    width: 30%;
+    vertical-align: top;
+    margin-right: 5%;
+    font-size: 14px;
+}
+.textcols .textcols-item:last-child {
+    margin-right: 0 ;
+}
+
+  
