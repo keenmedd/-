@@ -6,101 +6,102 @@ info:
     email: keenmedd@gmail.com
   version: 1.0.0
 servers:
-- url: http://localhost:1188
-# - url: https://virtserver.swaggerhub.com/keenmedd/API/1.0.0
-  description: SwaggerHub API Auto Mocking
+  - url: http://localhost:1188
+    # - url: https://virtserver.swaggerhub.com/keenmedd/API/1.0.0
+    description: SwaggerHub API Auto Mocking
 paths:
   /doctor:
     get:
       summary: searches doctors
-      description: "By passing in the appropriate options, you can search for\navailable\
+      description:
+        "By passing in the appropriate options, you can search for\navailable\
         \ doctor in the system\n"
       operationId: doctorGET
       parameters:
-      - name: name
-        in: query
-        description: pass an optional search string for looking up doctor
-        required: false
-        style: form
-        explode: true
-        schema:
-          type: string
-      - name: specialty
-        in: query
-        description: pass a filter for looking up doctor
-        required: false
-        style: form
-        explode: true
-        schema:
-          minimum: 0
-          type: integer
-          format: int32
-      - name: category 
-        in: query
-        description: doctor category
-        required: false
-        style: form
-        explode: true
-        schema:
-          type: string
-      - name: expirience
-        in: query
-        description: doctor's years of work
-        required: false
-        style: form
-        explode: true
-        schema:
-          minimum: 1
-          type: integer
-          format: int32
-      - name: workplace
-        in: query
-        description: doctor workplace
-        required: false
-        style: form
-        explode: true
-        schema:
-          type: string
-      - name: city
-        in: query
-        description: city where doctor works
-        required: false
-        style: form
-        explode: true
-        schema:
-          type: string
-      - name: rating
-        in: query
-        description: doctor's rating
-        required: false
-        style: form
-        explode: true
-        schema:
-          minimum: 1
-          maximum: 5
-          type: integer
-          format: int32
-      - name: feedbackAmount
-        in: query
-        description: feedbacks
-        required: false
-        style: form
-        explode: true
-        schema:
-          minimum: 0
-          type: integer
-          format: int32
-      - name: secondaryVisitPercent
-        in: query
-        description: percent of the secondary visit to the doctor
-        required: false
-        style: form
-        explode: true
-        schema:
-          minimum: 1
-          maximum: 100
-          type: integer
-          format: int32
+        - name: name
+          in: query
+          description: pass an optional search string for looking up doctor
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: string
+        - name: specialty
+          in: query
+          description: pass a filter for looking up doctor
+          required: false
+          style: form
+          explode: true
+          schema:
+            minimum: 0
+            type: integer
+            format: int32
+        - name: category
+          in: query
+          description: doctor category
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: string
+        - name: expirience
+          in: query
+          description: doctor's years of work
+          required: false
+          style: form
+          explode: true
+          schema:
+            minimum: 1
+            type: integer
+            format: int32
+        - name: workplace
+          in: query
+          description: doctor workplace
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: string
+        - name: city
+          in: query
+          description: city where doctor works
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: string
+        - name: rating
+          in: query
+          description: doctor's rating
+          required: false
+          style: form
+          explode: true
+          schema:
+            minimum: 1
+            maximum: 5
+            type: integer
+            format: int32
+        - name: feedbackAmount
+          in: query
+          description: feedbacks
+          required: false
+          style: form
+          explode: true
+          schema:
+            minimum: 0
+            type: integer
+            format: int32
+        - name: secondaryVisitPercent
+          in: query
+          description: percent of the secondary visit to the doctor
+          required: false
+          style: form
+          explode: true
+          schema:
+            minimum: 1
+            maximum: 100
+            type: integer
+            format: int32
       responses:
         "200":
           description: search results matching criteria
@@ -109,25 +110,46 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Doctor'
+                  $ref: "#/components/schemas/Doctor"
                 x-content-type: application/json
         "400":
           description: bad input parameter
       x-swagger-router-controller: Default
-  /doctor/details:
+  /doctor/{id}:
     get:
       summary: get doctor details
       description: "By passing in the appropriate options, you can get doctor details\n"
       operationId: doctorDetailsGET
       parameters:
-      - name: id
-        in: query
-        description: pass an id to get doctor details
-        required: true
-        style: form
-        explode: true
-        schema:
-          type: string
+        - name: id
+          in: path
+          description: pass an id to get doctor details
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: search results matching criteria
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Doctor"     
+        "400":
+          description: bad input parameter
+      x-swagger-router-controller: Default
+  /doctor/{id}/feedback:
+    get:
+      summary: get doctor feedback
+      description: "By passing in the appropriate options, you can get feedback about doctor\n"
+      operationId: doctorFeedbackGET
+      parameters:
+        - name: id
+          in: path
+          description: pass an id to get feedback about doctor
+          required: true
+          explode: true
+          schema:
+            type: string
       responses:
         "200":
           description: search results matching criteria
@@ -136,8 +158,33 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/DoctorDetails'
+                  $ref: "#/components/schemas/Feedback"
                 x-content-type: application/json
+        "400":
+          description: bad input parameter
+      x-swagger-router-controller: Default
+  /feedback/{id}:
+    post:
+      summary: post feedback about doctor 
+      description: "By passing in the appropriate options, you can post feedback about doctor details\n"
+      operationId: doctorFeedbackPOST
+      parameters:
+        - name: id
+          in: path
+          description: pass an id to post feedback about doctor
+          required: true
+          explode: true
+          schema:
+            type: string
+      requestBody:
+          description: pass body to post feedback about doctor
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Feedback"
+      responses:
+        "200":
+          description: post results 
         "400":
           description: bad input parameter
       x-swagger-router-controller: Default
@@ -162,10 +209,9 @@ components:
           type: string
           description: Doctor work category
           example: Высшая
-        experience:
+        yearsOfExperience:
           type: number
           description: Years of experience
-          format: float
           example: 5
         workplace:
           type: string
@@ -182,7 +228,6 @@ components:
         feedbackAmount:
           type: number
           description: Number of feedbacks
-          format: float
           example: 9
         secondaryVisitPer:
           type: number
@@ -192,16 +237,16 @@ components:
         education:
           type: array
           items:
-            $ref: '#/components/schemas/Education'
+            $ref: "#/components/schemas/Education"
         workExperience:
           type: array
           items:
-            $ref: '#/components/schemas/WorkExperience'
+            $ref: "#/components/schemas/WorkExperience"
       example:
         name: Куку Валентина Андреевна
         specialty: Терапия
         category: Высшая
-        experience: 5
+        yearsOfExperience: 5
         workplace: Поликлиника №35
         city: Минск
         rating: 5
@@ -233,63 +278,72 @@ components:
     WorkExperience:
       type: object
       properties:
-            id:
-                type: string
-                format: uuid
-                example: d290f1ee-6c54-4b01-90e6-d701748f0851
-            start:
-              type: string
-              format: date
-              example: 2020-09-01
-            end:
-              type: string
-              format: date
-              example: 2024-05-30
-            position:
-              type: string
-              description: Work position
-              example: Стоматолог
-            workplace:
-              type: string
-              description: Workplace
-              example: Стоматологическая поликлиника №5
-            competencies:
-              type: string
-              description: Competencies
-              example: Врач
-            extraInfo:
-              type: string
-              description: Extra
-              example: Лучший работник года!
+        start:
+          type: string
+          format: date
+          example: 2020-09-01
+        end:
+          type: string
+          format: date
+          example: 2024-05-30
+        position:
+          type: string
+          description: Work position
+          example: Стоматолог
+        workplace:
+          type: string
+          description: Workplace
+          example: Стоматологическая поликлиника №5
+        competencies:
+          type: array
+          items:
+            type: string
+          description: Competencies
+          example: ["Осмотр", "УЗИ"]
+        extraInfo:
+          type: array
+          items:
+            type: string
+          description: Extra info
+          example: ["Лучший работник года!"]
       example:
         start: 2020-09-01
         end: 2024-05-30
         position: Стоматолог
         workplace: Стоматологическая поликлиника №5
-        competencies: Врач
-        extraInfo: Лучший работник года!
-        id: d290f1ee-6c54-4b01-90e6-d701748f0851
-    Comment:
-      required:
-      - id
-      - text
+        competencies: ["Осмотр", "УЗИ"]
+        extraInfo: ["Лучший работник года!"]
+    Feedback:
       type: object
       properties:
-        id:
-          type: string
-          format: uuid
-          example: d290f1ee-6c54-4b01-90e6-d701748f0851
-        text:
+        rating:
+          type: integer
+          example: 3
+        politeness:
+          type: integer
+          example: 3
+        punctuality:
+          type: integer
+          example: 3
+        clearity:
+          type: integer
+          example: 3
+        comment:
           type: string
           example: Восхитительная работа!
-        createdAt:
+        authorName:
+          type: string
+          example: Николай
+        authorNumber:
+          type: string
+          example: +364477633
+        visitDate:
           type: string
           format: date-time
           example: 2021-05-30T18:28:19.684Z
-        rating:
-          type: number
-          format: float
-          example: 7.7
+        isFirstVisit:
+          type: boolean
+          example: true
       example:
         createdAt: 2021-05-30T18:28:19.684Z
         rating: 7.7
@@ -298,82 +352,16 @@ components:
     Education:
       type: object
       properties:
-        name:
+        year:
+          type: integer
+          example: 2021
+        note:
           type: string
           example: Курсы кардилогии
-        finishedAt:
-          type: string
-          format: date-time
-          example: 2021-05-30T18:28:19.684Z
         authority:
           type: string
           example: БелМАПО
       example:
         authority: БелМАПО
-        name: Курсы кардилогии
-        finishedAt: 2021-05-30T18:28:19.684Z
-    DoctorDetails:
-      required:
-      - id
-      - name
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          example: d290f1ee-6c54-4b01-90e6-d701748f0851
-        name:
-          type: string
-          description: Doctor full name
-          example: Куку Валентина Андреевна
-        specialty:
-          type: string
-          description: Doctor domain area
-          example: Терапия
-        experience:
-          type: integer
-          example: 5
-        rating:
-          type: number
-          format: float
-          example: 7.7
-        popularity:
-          type: number
-          description: Number of doctor comments
-          format: float
-          example: 3222
-        comments:
-          type: array
-          items:
-            $ref: '#/components/schemas/Comment'
-        workplace:
-          type: string
-          example: Минская ЦРБ
-        education:
-          type: array
-          items:
-            $ref: '#/components/schemas/Education'
-      example:
-        specialty: Терапия
-        comments:
-        - createdAt: 2021-05-30T18:28:19.684Z
-          rating: 7.7
-          id: d290f1ee-6c54-4b01-90e6-d701748f0851
-          text: Восхитительная работа!
-        - createdAt: 2021-05-30T18:28:19.684Z
-          rating: 7.7
-          id: d290f1ee-6c54-4b01-90e6-d701748f0851
-          text: Восхитительная работа!
-        education:
-        - authority: БелМАПО
-          name: Курсы кардилогии
-          finishedAt: 2021-05-30T18:28:19.684Z
-        - authority: БелМАПО
-          name: Курсы кардилогии
-          finishedAt: 2021-05-30T18:28:19.684Z
-        popularity: 3222
-        name: Куку Валентина Андреевна
-        rating: 7.7
-        id: d290f1ee-6c54-4b01-90e6-d701748f0851
-        experience: 5
-        workplace: Минская ЦРБ
+        note: Курсы кардилогии
+        year: 2021
