@@ -9,20 +9,20 @@ import { routes } from "./consts";
 import HomePage from "./containers/HomePage";
 import DoctorsPage from "./containers/DoctorsPage";
 import DoctorDetailsPage from "./containers/DoctorDetailsPage";
-import AddFeedbackModal from "./components/AddFeedbackModal";
-import ThankModal from "./components/ThankModal";
+// import AddFeedbackModal from "./components/AddFeedbackModal";
+// import ThankModal from "./components/ThankModal";
 
 export default function AppRouter() {
   return (
     <Router>
       <Switch>
-        <Route path={routes.thank}>
+        {/* <Route path={routes.thank}>
           <ThankModal />
         </Route>
 
         <Route path={routes.addfeedback}>
           <AddFeedbackModal />
-        </Route>
+        </Route> */}
 
         <Route path={routes.doctors}>
           <DoctorsPage />
