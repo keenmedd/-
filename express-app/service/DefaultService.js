@@ -120,10 +120,9 @@ exports.doctorDetailsGET = function(name, speciality, experience) {
             experience: faker.datatype.number({ min: 0, max: 50 }),
             workplace: faker.helpers.randomize(workplaces),
             city: "Минск",
-            popularity: faker.datatype.number({ min: 0, max: 5000 }),
             rating: faker.datatype.number({ min: 0, max: 5 }),
             image: faker.image.avatar(),
-            feedbackAmount: faker.datatype.number({ min: 0 }),
+            feedbackAmount: faker.datatype.number({ min: 0, max: 150 }),
             secondaryVisitPercent: faker.datatype.number({ min: 0, max: 100 }),
             id: faker.datatype.uuid(),
             education: Array.from({ length: faker.datatype.number(10) }, (x, i) => ({
