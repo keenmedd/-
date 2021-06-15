@@ -7,7 +7,7 @@ import { rootApiUrl } from "../../consts";
 
 export default function DoctorsPage() {
   const filters = useState({ searchQuery: "" });
-  const [doctorsList, setDoctorsList] = useState([]);
+  const [doctorsList, setDoctorsList] = useState();
 
   useEffect(async() => {
     if (!doctorsList) {
@@ -16,6 +16,7 @@ export default function DoctorsPage() {
         method: "GET",
         url: `${rootApiUrl}/doctor?name=${filters.searchQuery}`,
       });
+      debugger;
       setDoctorsList(response.data);
     }
   }, []);
@@ -28,7 +29,7 @@ export default function DoctorsPage() {
       {doctorsList
           ? doctorsList.map((doctor) => 
           <DoctorCard name={doctor.name}
-            specialty = {doctor.speciality}
+            speciality = {doctor.speciality}
             category  = {doctor.category}
             expirience = {doctor.expirience}
             workplace = {doctor.workplace}
@@ -36,6 +37,7 @@ export default function DoctorsPage() {
             rating = {doctor.rating}
             feedbackAmount = {doctor.feedbackAmount}
             secondaryVisitPercent = {doctor.secondaryVisitPercent}
+            image = {doctor.image}
            />)
           : "Докторов нет в списке"}
       </div>

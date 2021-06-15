@@ -24,20 +24,19 @@ export default function DoctorCard({
       </Link>
       {/* <div className="details_text">Подробнее</div> */}
     </button>
-    <div className="message_icon">
-      <div className="subtruct">
-        <div className="icon"></div>
-        <div className="vector"></div>
-      </div>
-    </div>
+    
     <div className="favorite_icon">
       <div className="icon"></div>
     </div>
-    <img src={image} alt=""/>
-      <p className="likes_counter counter">{rating}</p>
-      <p className="msg_counter counter">{feedbackAmount}</p>
-      <p className="msg_counter counter">{secondaryVisitPercent}%</p>
-      <p className="doctor_description description">Специальность: {speciality} {category}<br></br>Опыт работы: {experience}<br></br>{city} {workplace}</p>
+    <img className="doctor_photo" src={image} alt={name}></img>
+    <div className="group">
+      <div className="rating_image">
+        <div className="rating_number">{rating}</div>
+        <div className="feedback_number">{feedbackAmount}</div>
+        <div className="percent_number">{secondaryVisitPercent}%</div>
+      </div>
+    </div>
+      <p className="doctor_description description">{speciality} {category}<br></br>Опыт работы: {experience}<br></br>{city} {workplace}</p>
     <div className="doctor_name">{name}</div>
   </div>
     );
