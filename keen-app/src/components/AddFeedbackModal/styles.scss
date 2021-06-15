@@ -1,0 +1,55 @@
+.button_close {
+  height: 30px;
+  text-align: center;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  font-weight: bold;
+  margin: 0px 30px;
+}
+.feedback_block {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+.form {
+  padding: 30px;
+  input {
+    border-radius: 5px;
+    border: 1px solid #18a0fb;
+    width: 250px;
+  }
+}
+.feedback_modal {
+  width: 800px;
+
+  width: 800px;
+  border: 1px solid #000000;
+  margin: 30px;
+}
+textarea {
+  border-radius: 5px;
+  width: 100%;
+}
+.next {
+  margin: 30px;
+  margin-top: 0px;
+  width: 740px;
+}
+.toggle {
+  width: 200px;
+  display: flex;
+  height: 30px;
+  background-color: #e5e5e5;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  div {
+    width: 50%;
+    text-align: center;
+  }
+  .toggle_active {
+    background-color: #18a0fb;
+    border-radius: 5px;
+    color: #ffffff;
+  }
+}
