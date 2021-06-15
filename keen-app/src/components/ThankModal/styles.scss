@@ -1,0 +1,39 @@
+.thank_block {
+  width: 100px;
+  border-radius: 50%;
+  height: 100px;
+  background-color: #e5e5e5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  text-align: center;
+  cursor: pointer;
+}
+
+.thank_block_active {
+  background-color: #18a0fb;
+}
+.thank_modal {
+  width: 800px;
+  border: 1px solid #000000;
+  padding: 30px;
+  margin: 30px auto;
+  background-color: #ffffff;
+
+  .text_header_big {
+    margin: 30px 0;
+  }
+  .feedback_block {
+    justify-content: space-around;
+    margin: 30px 0;
+  }
+}
+.backdrop {
+  position: absolute;
+  z-index: 20;
+  background-color: rgba(0, 0, 0, 0.1);
+  width: 100%;
+  top: 0;
+  bottom: 0;
+}

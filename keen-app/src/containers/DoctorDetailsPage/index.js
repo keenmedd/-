@@ -1,14 +1,17 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import Header from "../../components/Header";
-import { rootApiUrl } from "../../consts";
+import { rootApiUrl, routes } from "../../consts";
 import ReactStars from "react-stars";
+import ThankModal from "../../components/ThankModal";
 
 export default function DoctorDetailsPage() {
+  const [showThankModal, setShowThankModal] = useState(false);
   const [doctor, setDoctor] = useState();
   const [feedback, setFeedback] = useState();
   const { id } = useParams();
+  const history = useHistory();
 
   useEffect(async () => {
     if (!doctor && id) {
@@ -27,9 +30,17 @@ export default function DoctorDetailsPage() {
     }
   }, []);
 
+  const onSendFeedbackClick = () => {
+    history.push(`${routes.addfeedback}/${id}`);
+  };
+
   return (
     <div className="patients__container">
       <Header />
+
+      {showThankModal && (
+        <ThankModal onClose={() => setShowThankModal(false)} />
+      )}
 
       {doctor && (
         <div className="doctor_container">
@@ -70,8 +81,18 @@ export default function DoctorDetailsPage() {
                 приходят снова
               </div>
 
-              <div className="feedback_button">Оставить отзыв</div>
-              <div className="thank_button">Поблагодарить</div>
+              <div
+                className="feedback_button"
+                onClick={() => onSendFeedbackClick()}
+              >
+                Оставить отзыв
+              </div>
+              <div
+                className="thank_button"
+                onClick={() => setShowThankModal(true)}
+              >
+                Поблагодарить
+              </div>
             </div>
           </div>
 
@@ -124,7 +145,9 @@ export default function DoctorDetailsPage() {
 
       <div className="block">
         <div className="text_header_big">Отзывы</div>
-        <div className="feedback_button">Оставить отзыв</div>
+        <div className="feedback_button" onClick={() => onSendFeedbackClick()}>
+          Оставить отзыв
+        </div>
       </div>
 
       {feedback && (
