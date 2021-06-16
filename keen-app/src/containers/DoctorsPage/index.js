@@ -2,11 +2,12 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Header from "../../components/Header";
+import DoctorCard from "../../components/DoctorCard"
 import { rootApiUrl } from "../../consts";
 
 export default function DoctorsPage() {
   const filters = useState({ searchQuery: "" });
-  const [doctorsList, setDoctorsList] = useState([]);
+  const [doctorsList, setDoctorsList] = useState();
 
   useEffect(async() => {
     if (!doctorsList) {
@@ -15,21 +16,33 @@ export default function DoctorsPage() {
         method: "GET",
         url: `${rootApiUrl}/doctor?name=${filters.searchQuery}`,
       });
+      debugger;
       setDoctorsList(response.data);
     }
   }, []);
 
   return (
-    <div className="patients__container">
+    <div className="doctor__container">
       <Header />
 
       <div className="doctor_list">
-        {/* {doctorsList
-          ? doctorsList.map((doctor) => <DoctorCard name={doctor.name} />)
-          : "Nope"} */}
+      {doctorsList
+          ? doctorsList.map((doctor) => 
+          <DoctorCard name={doctor.name}
+            speciality = {doctor.speciality}
+            category  = {doctor.category}
+            expirience = {doctor.expirience}
+            workplace = {doctor.workplace}
+            city = {doctor.city}
+            rating = {doctor.rating}
+            feedbackAmount = {doctor.feedbackAmount}
+            secondaryVisitPercent = {doctor.secondaryVisitPercent}
+            image = {doctor.image}
+           />)
+          : "Докторов нет в списке"}
       </div>
 
-      <div className="patients_paginaton">
+      <div className="doctor_paginaton">
         {" "}
         Всего результатов <b>20</b>, отображены с <b>1</b> по <b>5</b>.
         Страницы: <b>1</b> 2 3{" "}

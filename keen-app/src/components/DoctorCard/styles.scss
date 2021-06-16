@@ -1,0 +1,141 @@
+ .doctor_card {
+     position: relative;
+     margin-right: 30px;
+     margin-bottom: 15px;
+     width: 450px;
+     height: 678px;
+     left: 18px;
+     top: 0px;
+     background: #FFFFFF;
+     border: 1px solid rgba(0, 0, 0, 0.5);
+     box-sizing: border-box;
+     .group {
+         position: relative;
+         width: 89px;
+         height: 294px;
+         left: 378px;
+         top: 14px;
+         .rating_image {
+             position: relative;
+             width: 44px;
+             height: 37px;
+             left: 399px;
+             top: 14px;
+             background: url(./../../static/images/rating.png);
+         }
+         .rating_number {
+             position: relative;
+             width: 42px;
+             height: 35.87px;
+             left: 401px;
+             top: 66px;
+             font-family: Montserrat;
+             font-style: normal;
+             font-weight: bold;
+             font-size: 24px;
+             line-height: 30px;
+             letter-spacing: -0.015em;
+             color: #000000;
+         }
+         .feedback_number {
+             position: relative;
+             width: 89px;
+             height: 46px;
+             left: 378px;
+             top: 139px;
+             font-family: Montserrat;
+             font-style: normal;
+             font-weight: bold;
+             font-size: 18px;
+             line-height: 30px;
+             text-align: center;
+             letter-spacing: -0.015em;
+             color: #000000;
+         }
+         .percent_number {
+             position: absolute;
+             width: 89px;
+             height: 86px;
+             left: 378px;
+             top: 222px;
+             font-family: Montserrat;
+             font-style: normal;
+             font-weight: bold;
+             font-size: 18px;
+             line-height: 30px;
+             text-align: center;
+             letter-spacing: -0.015em;
+             color: #000000;
+         }
+     }
+     button.details_button {
+         position: relative;
+         width: 130px;
+         height: 45.35px;
+         left: 176px;
+         top: 620.18px;
+         color: $blue;
+         .rectangle {
+             position: absolute;
+             left: 0%;
+             right: 0%;
+             top: 0%;
+             bottom: 0%;
+             background: #18A0FB;
+             border-radius: 6px;
+         }
+         .details_text {
+             position: absolute;
+             left: 16.15%;
+             right: 15.38%;
+             top: 27.5%;
+             bottom: 27.5%;
+             font-family: Montserrat;
+             font-style: normal;
+             font-weight: 500;
+             font-size: 15px;
+             line-height: 18px;
+             display: flex;
+             align-items: center;
+             text-align: center;
+             letter-spacing: -0.015em;
+             color: #FFFFFF;
+         }
+     }
+     .doctor_photo {
+         position: relative;
+         position: absolute;
+         width: 336px;
+         height: 352.75px;
+         left: 38px;
+         top: 25.11px;
+     }
+     .doctor_description {
+         position: absolute;
+         width: 356px;
+         height: 138px;
+         left: 38px;
+         top: 449px;
+         font-family: Montserrat;
+         font-style: normal;
+         font-weight: normal;
+         font-size: 18px;
+         line-height: 30px;
+         letter-spacing: -0.015em;
+         color: rgba(0, 0, 0, 0.8);
+     }
+     .doctor_name {
+         position: absolute;
+         width: 407.52px;
+         height: 41.38px;
+         left: 37.99px;
+         top: 394.6px;
+         font-family: Montserrat;
+         font-style: normal;
+         font-weight: bold;
+         font-size: 24px;
+         line-height: 36px;
+         letter-spacing: -0.015em;
+         color: #000000;
+     }
+ }

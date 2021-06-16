@@ -1,204 +1,133 @@
-header.patients_header {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0px;
-    position: absolute;
-    width: 1440px;
-    height: 60px;
-    left: calc(50% - 1440px/2);
-    top: calc(50% - 60px/2 - 482px);
-    border: 1px solid #000000;
+// header.doctor_header {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: flex-start;
+//     padding: 0px;
+//     position: absolute;
+//     width: 1440px;
+//     height: 60px;
+//     left: calc(50% - 1440px/2);
+//     top: calc(50% - 60px/2 - 482px);
+//     border: 1px solid #000000;
+// }
+.doctor_container {
+  position: relative;
+  width: 1440px;
+  height: 1024px;
+  background: #ffffff;
 }
 
-.patients_container {
-    position: relative;
-    width: 1440px;
-    height: 1024px;
-    background: #FFFFFF;
-}
-
-.patients_pagination {
-    position: absolute;
-    left: 29.38%;
-    right: 30.07%;
-    top: 93.36%;
-    bottom: 2.34%;
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 22px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    letter-spacing: -0.015em;
-    color: $blue;
+.doctor_pagination {
+  position: relative;
+  left: 29.38%;
+  right: 30.07%;
+  top: 93.36%;
+  bottom: 2.34%;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: -0.015em;
+  /* Actionable Item */
+  color: #18a0fb;
 }
 
 .doctor_list {
-    position: absolute;
-    width: 1440px;
-    height: 713px;
-    left: 0px;
-    top: 218px;
-    .doctor_card {
-        position: absolute;
-        width: 450px;
-        height: 678px;
-        left: 18px;
-        top: 0px;
-        background: #FFFFFF;
-        border: 1px solid rgba(0, 0, 0, 0.5);
-        box-sizing: border-box;
-        button.details_button {
-            position: absolute;
-            width: 130px;
-            height: 45.35px;
-            left: 176px;
-            top: 620.18px;
-            .rectangle {
-                position: absolute;
-                left: 0%;
-                right: 0%;
-                top: 0%;
-                bottom: 0%;
-                background: $blue;
-                border-radius: 6px;
-            }
-            .details_text {
-                position: absolute;
-                left: 16.15%;
-                right: 15.38%;
-                top: 27.5%;
-                bottom: 27.5%;
-                font-family: Montserrat;
-                font-style: normal;
-                font-weight: 500;
-                font-size: 15px;
-                line-height: 18px;
-                display: flex;
-                align-items: center;
-                text-align: center;
-                letter-spacing: -0.015em;
-                color: #FFFFFF;
-            }
-        }
-        .message_icon {
-            position: absolute;
-            width: 38px;
-            height: 40.66px;
-            left: 878px;
-            top: 70.55px;
-            .subtract {
-                position: absolute;
-                width: 28.5px;
-                height: 23.72px;
-                left: 3.68px;
-                top: 16.74px;
-                background: #ACACAC;
-                .icon {
-                    position: absolute;
-                    left: 9.68%;
-                    right: 15.32%;
-                    top: 41.18%;
-                    bottom: 0.49%;
-                    background: #273B4A;
-                    border-radius: 3px;
-                }
-                .vector {
-                    position: absolute;
-                    left: 22.18%;
-                    right: 27.82%;
-                    top: 57.84%;
-                    bottom: 25.49%;
-                    border: 2px solid #FFFFFF;
-                    box-sizing: border-box;
-                    border-radius: 2px;
-                }
-            }
-        }
-        .favorite_icon {
-            position: absolute;
-            width: 14.81px;
-            height: 16.74px;
-            left: 306.35px;
-            top: 25.11px;
-            .icon {
-                position: absolute;
-                left: 672.93%;
-                right: -793.76%;
-                top: -85.71%;
-                bottom: 19.05%;
-                background: #E73131;
-                border-radius: 2px;
-            }
-        }
-        .doctor_photo {
-            position: absolute;
-            width: 336px;
-            height: 352.75px;
-            left: 39px;
-            top: 25.11px;
-            //background: url(image.png);
-        }
-        .likes_counter {
-            position: absolute;
-            width: 42px;
-            height: 35.87px;
-            left: 406px;
-            top: 45.44px;
-        }
-        .msg_counter {
-            position: absolute;
-            width: 39px;
-            height: 35.87px;
-            left: 410px;
-            top: 120.77px;
-        }
-        .doctor_description {
-            position: absolute;
-            width: 356px;
-            height: 138px;
-            left: 39px;
-            top: 449px;
-        }
-        .doctor_name {
-            position: absolute;
-            width: 407.52px;
-            height: 41.38px;
-            left: 38.99px;
-            top: 394.6px;
-        }
-    }
-}
-
-body {
-    p.counter {
-        font-family: Montserrat;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 18px;
-        line-height: 30px;
-        letter-spacing: -0.015em;
-        color: #000000;
-    }
-    p.description {
-        font-family: Montserrat;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 18px;
-        line-height: 30px;
-        /* or 167% */
-        letter-spacing: -0.015em;
-        color: rgba(0, 0, 0, 0.8);
-    }
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  position: relative;
+  width: 1440px;
+  height: 738px;
+  left: 0px;
+  top: 218px;
 }
 
 button.doctors_search {
+  position: absolute;
+  width: 449px;
+  height: 40px;
+  left: 29px;
+  top: 15px;
+}
+
+.filters_container {
+  position: absolute;
+  width: 1440px;
+  height: 116px;
+  left: 0px;
+  top: 76px;
+  .search {
     position: absolute;
-    width: 449px;
-    height: 40px;
+    width: 833px;
+    height: 24px;
     left: 29px;
-    top: 15px;
+    top: 76px;
+    .rating_asc {
+      position: absolute;
+      width: 94px;
+      height: 24px;
+      left: 768px;
+      top: 76px;
+      .arrow {
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        left: 862px;
+        top: 100px;
+        transform: rotate(180deg);
+      }
+      .rating_text {
+        position: absolute;
+        left: 53.33%;
+        right: 41.81%;
+        top: 68.1%;
+        bottom: 16.38%;
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 18px;
+        display: flex;
+        align-items: center;
+        letter-spacing: -0.015em;
+        color: #18a0fb;
+      }
+    }
+    .rating_desc {
+      position: absolute;
+      width: 94px;
+      height: 24px;
+      left: 768px;
+      top: 76px;
+      .arrow {
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        left: 862px;
+        top: 100px;
+        transform: rotate(180deg);
+      }
+      .rating_text {
+        position: absolute;
+        left: 53.33%;
+        right: 41.81%;
+        top: 68.1%;
+        bottom: 16.38%;
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 18px;
+        display: flex;
+        align-items: center;
+        letter-spacing: -0.015em;
+        color: #18a0fb;
+      }
+    }
+  }
 }

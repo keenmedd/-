@@ -52,7 +52,7 @@ export default function DoctorDetailsPage() {
                 <span className="text_bold">{doctor.speciality} </span>
                 <span>{doctor.category}</span>
                 <div className="text_bold">
-                  {doctor.yearsOfExperience} лет стажа
+                  {doctor.experience} лет стажа
                 </div>
                 <div>
                   <span className="text_bold">г. {doctor.city}</span>{" "}

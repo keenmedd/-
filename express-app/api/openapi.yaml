@@ -26,7 +26,7 @@ paths:
           explode: true
           schema:
             type: string
-        - name: specialty
+        - name: speciality
           in: query
           description: pass a filter for looking up doctor
           required: false
@@ -44,7 +44,7 @@ paths:
           explode: true
           schema:
             type: string
-        - name: expirience
+        - name: experience
           in: query
           description: doctor's years of work
           required: false
@@ -201,7 +201,7 @@ components:
           type: string
           description: Doctor full name
           example: Куку Валентина Андреевна
-        specialty:
+        speciality:
           type: string
           description: Doctor domain area
           example: Терапия
@@ -209,7 +209,7 @@ components:
           type: string
           description: Doctor work category
           example: Высшая
-        yearsOfExperience:
+        experience:
           type: number
           description: Years of experience
           example: 5
@@ -244,9 +244,9 @@ components:
             $ref: "#/components/schemas/WorkExperience"
       example:
         name: Куку Валентина Андреевна
-        specialty: Терапия
+        speciality: Терапия
         category: Высшая
-        yearsOfExperience: 5
+        experience: 5
         workplace: Поликлиника №35
         city: Минск
         rating: 5
