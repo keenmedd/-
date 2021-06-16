@@ -4,28 +4,28 @@ $grey: rgba(0, 0, 0, 0.25);
 $blue: #18a0fb;
 //fonts
 @font-face {
-  font-family: Roboto;
-  src: url("./static/fonts/Roboto/Roboto-Black.ttf");
+    font-family: Roboto;
+    src: url("./static/fonts/Roboto/Roboto-Black.ttf");
 }
 
 @font-face {
-  font-family: Ravi Prakash;
-  src: url("./static/fonts/Ravi_Prakash/RaviPrakash-Regular.ttf");
+    font-family: Ravi Prakash;
+    src: url("./static/fonts/Ravi_Prakash/RaviPrakash-Regular.ttf");
 }
 
 @font-face {
-  font-family: Montserrat;
-  src: url("./static/fonts/Montserrat/Montserrat-Regular.ttf");
+    font-family: Montserrat;
+    src: url("./static/fonts/Montserrat/Montserrat-Regular.ttf");
 }
 
 @font-face {
-  font-family: Montserrat-Medium;
-  src: url("./static/fonts/Montserrat/Montserrat-Medium.ttf");
+    font-family: Montserrat-Medium;
+    src: url("./static/fonts/Montserrat/Montserrat-Medium.ttf");
 }
 
 @font-face {
-  font-family: Montserrat-Bold;
-  src: url("./static/fonts/Montserrat/Montserrat-Bold.ttf");
+    font-family: Montserrat-Bold;
+    src: url("./static/fonts/Montserrat/Montserrat-Bold.ttf");
 }
 
 //common styles
@@ -38,63 +38,69 @@ body {
   font-weight: normal;
   font-size: 18px;
   line-height: 30px;
+  position: relative;
 }
+#root {
+  position: relative;
 
+}
 a {
-  text-decoration: none;
-  display: block;
-  cursor: pointer;
-  &:hover {
     text-decoration: none;
-  }
-  &:active,
-  &:visited {
-    text-decoration: none;
-  }
+    display: block;
+    cursor: pointer;
+    &:hover {
+        text-decoration: none;
+    }
+    &:active,
+    &:visited {
+        text-decoration: none;
+    }
 }
 
 input,
 textarea {
-  font-family: Roboto;
-  box-sizing: border-box;
-  -webkit-appearance: none;
-  -webkit-border-radius: 0px;
-  border-radius: 0px;
-  &:focus {
-    outline: none;
-  }
+    font-family: Roboto;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+    &:focus {
+        outline: none;
+    }
 }
 
 input[type="search"]::-webkit-search-cancel-button {
-  display: none;
+    display: none;
 }
 
 .text_default {
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 30px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 30px;
 }
+
 .text_header {
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 24px;
-  line-height: 36px;
-  /* or 150% */
-
-  letter-spacing: -0.015em;
-
-  color: #000000;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 36px;
+    /* or 150% */
+    letter-spacing: -0.015em;
+    color: #000000;
 }
+
 .text_bold {
-  font-weight: bold;
+    font-weight: bold;
 }
 
 //imports of partial scss styles
 @import "./containers/HomePage/styles.scss";
 @import "./components/Header/styles.scss";
 @import "./containers/DoctorsPage/styles.scss";
+
 @import "./containers/DoctorDetailsPage/styles.scss";
-@import "./components/DoctorCard/styles.scss"
+@import "./components/AddFeedbackModal/styles.scss";
+@import "./components/ThankModal/styles.scss";
