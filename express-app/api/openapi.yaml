@@ -89,6 +89,7 @@ paths:
           explode: true
           schema:
             minimum: 0
+            maximum: 170
             type: integer
             format: int32
         - name: secondaryVisitPercent
