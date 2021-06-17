@@ -22,7 +22,6 @@ export default function DoctorCard({
         <Link to={`${routes.doctor}/${id}`} className="details_text">
           Подробнее
         </Link>
-        {/* <div className="details_text">Подробнее</div> */}
       </button>
 
       <div className="favorite_icon">
@@ -30,11 +29,12 @@ export default function DoctorCard({
       </div>
       <img className="doctor_photo" src={image} alt={name}></img>
       <div className="group">
-        <div className="rating_image">
-          <div className="rating_number">{rating}</div>
-          <div className="feedback_number">{feedbackAmount}</div>
-          <div className="percent_number">{secondaryVisitPercent}%</div>
-        </div>
+        <div className="rating_image"></div>
+        <div className="rating_number">{rating}</div>
+        <div className="feedback_number">{feedbackAmount}</div>
+        <div className="feedback_text">отзывов</div> 
+        <div className="percent_number">{secondaryVisitPercent}% </div>   
+        <div className="perc_text">посещений</div>       
       </div>
       <p className="doctor_description description">
         {speciality} {category}
@@ -45,4 +45,4 @@ export default function DoctorCard({
       <div className="doctor_name">{name}</div>
     </div>
   );
-}
+  }

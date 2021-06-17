@@ -66,7 +66,7 @@ exports.doctorGET = function(name, speciality, experience) {
                 city: "Минск",
                 rating: faker.datatype.number({ min: 0, max: 5 }),
                 image: faker.image.avatar(),
-                feedbackAmount: faker.datatype.number({ min: 0 }),
+                feedbackAmount: faker.datatype.number({ min: 0, max: 170 }),
                 secondaryVisitPercent: faker.datatype.number({ min: 0, max: 100 }),
                 id: faker.datatype.uuid(),
             })
